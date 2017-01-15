@@ -1,0 +1,14 @@
+<%= @customer.errors.full_messages.first if @customer.errors.any? %>
+<div>New Customer</div>
+
+<%= form_for @customer do |f| %>
+  <%= render 'form', f: f %>
+
+  <%= f.fields_for :machines do |mac| %>
+    <%= render 'machine_form', mac: mac %>
+  <% end %>
+  <div class="buttons">
+    <%= f.submit 'submit' %>
+    <%= link_to 'cansel', :customers %>
+  </div>
+<% end %>

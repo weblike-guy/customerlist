@@ -1,0 +1,22 @@
+Customer
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Deposit</th>
+    <th>Created Day</th>
+    <th>Mac Number</th>
+    <th>Mac created Day</th>
+  </tr>
+  <tr>
+    <td><%= @customer.name %></td>
+    <td><%= @customer.deposit %></td>
+    <td><%= @customer.created_at.strftime("%Y-%m-%d")%></td>
+     <% @customer.machines.each do |mac| %>
+    <td><%= mac.macnumber%></td>
+    <td><%= mac.created_at.strftime("%Y-%m-%d") %></td>
+      <% end %>
+   
+  </tr>
+
+</table>
+

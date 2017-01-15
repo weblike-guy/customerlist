@@ -1,0 +1,11 @@
+<div>Edit Customer</div>
+
+<%= form_for @customer do |f| %>
+  <%= render 'form', f: f %>
+
+  <div class="buttons">
+    <%= f.submit 'submit' %>
+    <%= link_to 'cansel', :customers %>
+  </div>
+<% end %>
+~            

@@ -1,0 +1,25 @@
+<h1>All Customer</h1>
+
+
+<table>
+  <tr>
+    <th>name</th>
+    <th>deposit</th>
+    <th>create day</th>
+    <th>Current Machine</th>
+    <th>Other</th>
+  </tr>
+    <% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.name %></td>
+    <td><%= customer.deposit %></td>
+    <td><%= customer.created_at.strftime("%Y-%m-%d") %></td>
+     <% @current_mac.each do |mac| %>
+    <td><%= mac.current_mac%></td>
+     <% end %>
+    <td><%= link_to "show", customer %></td>
+    <td><%= link_to "edit", edit_customer_path(customer) %></td>
+    <td><%= link_to "Remove", customer, method: :delete, data: { confirm: "Are you sure? "}%></td> 
+  </tr>
+<% end %>
+</table>

@@ -1,0 +1,3 @@
+class CurrentMachine < Machine
+
+end

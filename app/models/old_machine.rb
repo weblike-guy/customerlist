@@ -1,0 +1,2 @@
+class OldMachine < Machine
+end
